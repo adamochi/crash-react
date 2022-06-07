@@ -1,15 +1,18 @@
 import logo from "./logo.svg";
-import styles from "./App.module.css";
+import style from "./App.module.css";
 import Header from "./components/Header";
 import React from "react";
+import PropTypes from "prop-types";
 
 function App() {
   const name = "adam";
   return (
-    <div className={styles.App_header}>
+    <div className={style.App_header}>
       <h1>Hello {name}</h1>
-      {Header}
-      <img src={logo} className={styles.App - logo} alt="logo" />
+      <Header />
+      <div className={style.low_go}>
+        <img src={logo} className={style.App - logo} alt="logo" />
+      </div>
     </div>
   );
 }
