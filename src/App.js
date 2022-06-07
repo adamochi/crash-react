@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Tasks />
       <div className={style.low_go}>
-        <img src={logo} className={style.App - logo} alt="logo" />
+        <img src={logo} className={style.App_logo} alt="logo" />
       </div>
     </div>
   );
