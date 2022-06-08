@@ -7,6 +7,15 @@ import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch("http://localhost:5000/tasks");
+      const data = await res.json();
+      console.log(data);
+    };
+    fetchTasks();
+  }, []);
   const [showAddTask, setShowAddTask] = useState(false);
   const name = "adamochi";
   useEffect(() => {
@@ -24,6 +33,7 @@ function App() {
   const addTask = (task) => {
     const id = Math.floor(Math.random() * 10000) + 1;
     const newTask = { id, ...task };
+    console.log(id);
     setTasks([...tasks, newTask]);
   };
 
